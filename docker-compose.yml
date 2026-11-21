@@ -1,0 +1,30 @@
+services: 
+  db_police_a:
+    image: postgres:16-alpine
+    container_name: evitrace_db_police_a
+    restart: unless-stopped
+    environment: 
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password_a
+      POSTGRES_DB: police_a_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - police_a_data:/var/lib/postgresql/data
+
+  db_police_b:
+    image: postgres:16-alpine
+    container_name: evitrace_db_police_b
+    restart: unless-stopped
+    environment: 
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password_b
+      POSTGRES_DB: police_b_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - police_b_data:/var/lib/postgresql/data
+    
+volumes:
+  police_a_data:
+  police_b_data:
