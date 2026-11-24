@@ -1,0 +1,21 @@
+{
+  "name": "police-station",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:a": "node --watch --env-file=.env.policeA src/server.js",
+    "dev:b": "node --watch --env-file=.env.policeB src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "multer": "^2.5.0",
+    "pg": "^8.23.1"
+  }
+}
